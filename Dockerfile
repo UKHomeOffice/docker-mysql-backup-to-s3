@@ -2,7 +2,8 @@ FROM alpine:3.4
 
 RUN apk add --no-cache mysql-client
 
-RUN mkdir -p /aws && \
+RUN mkdir -p /aws /dumps && \
+          chmod 777 /dumps && \
 	  apk -Uuv add groff less python py-pip && \
 	  pip install awscli && \
 	  apk --purge -v del py-pip && \

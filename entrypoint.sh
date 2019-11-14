@@ -11,7 +11,6 @@ if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then echo "AWS_SECRET_ACCESS_KEY needs to be
 if [ -z "$AWS_S3_BUCKET" ]; then echo "AWS_S3_BUCKET needs to be set"; exit 1; fi
 if [ -z "$AWS_KMS_ID" ]; then echo "AWS_KMS_ID needs to be set"; exit 1; fi
 
-mkdir -p /dumps
 dump_name=/dumps/`date "+%Y%m%d_%H%M"`_$MYSQL_DB.sql
 
 echo "Creating mysql dump: ${dump_name}"
